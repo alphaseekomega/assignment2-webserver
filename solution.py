@@ -2,27 +2,27 @@
 from socket import *
 # In order to terminate the program
 import sys
-
+from socket import*
 
 def webServer(port=13331):
   serverSocket = socket(AF_INET, SOCK_STREAM)
   #Prepare a server socket
   serverSocket.bind(("", port))
   #Fill in start
-
-  #Fill i end
+  serverSocket.listen(1)
+  #Fill in end
 
   while True:
     #Establish the connection
     #print('Ready to serve...')
-    connectionSocket, addr = #Fill in start      #Fill in end
+    connectionSocket, addr = serverSocket.accept()#Fill in start       #Fill in end
     try:
 
       try:
-        message = #Fill in start    #Fill in end
+        message = connectionSocket.recv(1024).decode()#Fill in start    #Fill in end
         filename = message.split()[1]
         f = open(filename[1:])
-        outputdata = #Fill in start     #Fill in end
+        outputdata =#Fill in start     #Fill in end
         
         #Send one HTTP header line into socket.
         #Fill in start
